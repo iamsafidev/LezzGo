@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="red">#FF585A</color>
+    <color name="light_red">#BCFF585A</color>
+    <color name="primary">#FB638F</color>
+    <color name="secondary">#FCF8F8</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="tertiary_inverse">#E3E3E3</color>
+    <color name="component_disabled_dark">#C32553</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="text_content_disabled_brand">#F5979E</color>
+    <color name="text_primary_color">#111111</color>
+    <color name="light_grey">#D8D7D7</color>
+    <color name="grey">#969696</color>
+    <color name="transparent">#00000000</color>
+    <color name="editText_home">#414141</color>
+    <color name="image_editText_home">#414141</color>
+    <color name="cursor_editText_home">#BCFA4648</color>
+    <color name="textView_select_text_home">#E897AE</color>
+    <color name="card_search_home">#FFFFFF</color>
+</resources>

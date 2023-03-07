@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.LezzGo.Button" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:background">@drawable/selector_primary_button</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:textAppearance">@style/TextAppearance.LezzGo.Button</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/textSizeButton</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.LezzGo.Button.Secondary" parent="Widget.LezzGo.Button">
+        <item name="android:background">@drawable/selector_secondary_button</item>
+        <item name="android:textColor">@color/secondary_btn_text_selector</item>
+    </style>
+
+    <style name="Widget.LezzGo.Button.LightStroked" parent="Widget.LezzGo.Button.Secondary">
+        <item name="android:textColor">@color/text_primary_color</item>
+        <item name="android:background">@drawable/button_light_stroked_background</item>
+    </style>
+
+    <style name="SideMenuCategory">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginStart">@dimen/ui_spacing_triple</item>
+        <item name="android:textAppearance">?textAppearanceBody1</item>
+    </style>
+
+    <style name="editText_home_style" parent="ThemeOverlay.MaterialComponents.TextInputEditText">
+        <item name="colorControlActivated">@color/cursor_editText_home</item>
+        <item name="android:textColorHighlight">@color/textView_select_text_home</item>
+    </style>
+<!--
+    <style name="MenuSeparator">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/view_stroke_width</item>
+        <item name="android:background">@color/menu_separator</item>
+    </style>-->
+
+    <style name="SideMenuItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/menu_item_height</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:drawablePadding">@dimen/ui_spacing_double</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">@dimen/ui_spacing_triple</item>
+        <item name="android:paddingEnd">@dimen/ui_spacing_triple</item>
+        <item name="android:textAppearance">?textAppearanceBody1</item>
+    <!--    <item name="android:textColor">@color/text_primary_color</item>-->
+    </style>
+
+    <style name="AttachmentLinearLayout">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">?android:selectableItemBackgroundBorderless</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+    <style name="ActualAttachmentLayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/ui_spacing_one_half</item>
+        <item name="tint">@color/white</item>
+    </style>
+    <style name="AttachmentText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">@dimen/ui_spacing_quarter</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+</resources>

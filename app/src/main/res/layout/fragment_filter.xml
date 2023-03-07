@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".presentation.filters.FilterFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.01" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/TextAppearance.LezzGo.Headline6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Filters"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineTop" />
+
+
+    <LinearLayout
+        android:id="@+id/llLocations"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/ui_spacing_half"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <TextView
+            android:id="@+id/tvLocation"
+            style="@style/TextAppearance.LezzGo.Body1"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textColor="@color/grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location" />
+
+        <CheckBox
+            android:id="@+id/checkbox_isl"
+            android:buttonTint="@color/primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Islamabad" />
+
+        <CheckBox
+            android:id="@+id/checkbox_lhr"
+            android:buttonTint="@color/primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lahore" />
+
+        <CheckBox
+            android:id="@+id/checkbox_us"
+            android:buttonTint="@color/primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="United States" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llTailored"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/llLocations">
+
+        <TextView
+            android:id="@+id/tvTailored"
+            style="@style/TextAppearance.LezzGo.Body1"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textColor="@color/grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TAILORED TO" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/checkbox_recent"
+            app:useMaterialThemeColors="true"
+            android:buttonTint="@color/primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Most Recent" />
+
+        <CheckBox
+            android:id="@+id/checkbox_next_month"
+            android:layout_width="wrap_content"
+            android:buttonTint="@color/primary"
+            android:layout_height="wrap_content"
+            android:text="Next Month" />
+
+        <CheckBox
+            android:id="@+id/checkbox_uc"
+            android:buttonTint="@color/primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upcoming" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/logout_button"
+        style="@style/Widget.LezzGo.Button.Secondary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/ui_spacing_half"
+        android:text="Apply Filters"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/llTailored" />
+</androidx.constraintlayout.widget.ConstraintLayout>

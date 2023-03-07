@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">LezzGo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sign_in">Sign In</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_up_with_microsoft">Sign up with Microsoft</string>
+    <string name="some_text"><![CDATA[<font color=\'#969696\'>Hi,</font> %s &#128075;]]>
+    </string>
+    <string name="search_all_events">Search All events</string>
+</resources>

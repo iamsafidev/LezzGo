@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textSizeHeading1">93sp</dimen>
+    <dimen name="textSizeHeading2">58sp</dimen>
+    <dimen name="textSizeHeading3">47sp</dimen>
+    <dimen name="textSizeHeading4">33sp</dimen>
+    <dimen name="textSizeHeading5">26sp</dimen>
+    <dimen name="textSizeHeading6">20sp</dimen>
+    <dimen name="textSizeSubtitle1">18sp</dimen>
+    <dimen name="textSizeSubtitle2">16sp</dimen>
+    <dimen name="textSizeBody1">16sp</dimen>
+    <dimen name="textSizeBody2">14sp</dimen>
+    <dimen name="textSizeCaption">12sp</dimen>
+    <dimen name="textSizeButton">16sp</dimen>
+    <dimen name="textSizeSmallButton">13sp</dimen>
+    <dimen name="textSizeDialogNewTitle">24sp</dimen>
+    <dimen name="textSizeBottomNavigation">12sp</dimen>
+    <dimen name="textSizeHintSmall">14sp</dimen>
+    <dimen name="textSizeExpandedToolbar">24sp</dimen>
+    <dimen name="textSizeDialogTitle">18sp</dimen>
+    <dimen name="textSizeToolbarTitle">26sp</dimen>
+    <dimen name="textSizeOverline">10sp</dimen>
+</resources>

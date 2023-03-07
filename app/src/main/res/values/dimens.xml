@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- region UI Spacing -->
+    <dimen name="ui_spacing_quarter">2dp</dimen>
+    <dimen name="ui_spacing_half">4dp</dimen>
+    <dimen name="ui_spacing_single">8dp</dimen> <!-- baseline -->
+    <dimen name="ui_spacing_single_negative">-8dp</dimen>
+    <dimen name="ui_spacing_one_half">12dp</dimen>
+    <dimen name="ui_spacing_double">16dp</dimen>
+    <dimen name="ui_spacing_double_half">20dp</dimen>
+    <dimen name="ui_spacing_triple">24dp</dimen>
+    <dimen name="ui_spacing_triple_half">28dp</dimen>
+    <dimen name="ui_spacing_quadruple">32dp</dimen>
+    <dimen name="ui_spacing_sextuple">48dp</dimen>
+    <dimen name="ui_spacing_octuple">64dp</dimen>
+    <!--endregion-->
+
+    <!-- region Common-->
+    <dimen name="content_padding_bottom">128dp</dimen>
+    <dimen name="content_corner_radius">16dp</dimen>
+    <dimen name="view_stroke_width">1dp</dimen>
+    <dimen name="view_stroke_width_focused">2dp</dimen>
+    <dimen name="input_field_height">@dimen/ui_spacing_sextuple</dimen>
+    <!--endregion-->
+
+    <!--region Side menu -->
+    <dimen name="menu_item_height">48dp</dimen>
+    <!--endregion-->
+
+    <!-- region Entry screen-->
+    <dimen name="entry_login_button_stroke_width">2dp</dimen>
+    <dimen name="entry_app_label_text_size">48sp</dimen>
+    <dimen name="entry_screen_padding_top">80dp</dimen>
+    <!--endregion-->
+
+    <!-- region Setup login credentials screen-->
+    <dimen name="setup_login_creds_validation_check_circle_stroke_width">2dp</dimen>
+    <dimen name="setup_login_creds_validation_check_circle_diameter">20dp</dimen>
+    <!--endregion-->
+
+    <!--region Random Files -->
+    <dimen name="link_hs_logo_margin_top">41dp</dimen>
+    <dimen name="random_file_min_height">400dp</dimen>
+    <!--endregion-->
+
+    <!--region Phone screen -->
+    <dimen name="phone_code_margin_top">40dp</dimen>
+    <!--endregion-->
+
+    <!-- region Money location -->
+    <dimen name="money_location_widget_height">165dp</dimen>
+    <dimen name="money_location_widget_title_margin_start">68dp</dimen>
+    <!--endregion-->
+
+    <!-- region Main screen -->
+    <dimen name="main_offer_card_bottom_container_min_height">78dp</dimen>
+    <dimen name="main_article_text_line_spacing">1sp</dimen>
+    <dimen name="main_article_divider_height">1dp</dimen>
+    <!--endregion-->
+
+    <!-- region Fuego card -->
+    <dimen name="fuego_card_activate_plastic_widget_width">272dp</dimen>
+    <dimen name="fuego_card_activate_plastic_widget_height">172dp</dimen>
+    <!-- endregion -->
+
+
+    <!-- region Verify email screen -->
+    <dimen name="verify_email_success_view_image_margin_top">80dp</dimen>
+    <!--endregion-->
+
+    <!-- region region Draw -->
+    <dimen name="draw_thumb_diameter">42dp</dimen>
+    <dimen name="draw_progress_stroke">12dp</dimen>
+    <dimen name="draw_progress_corner">4dp</dimen>
+    <dimen name="draw_how_much_container_height">258dp</dimen>
+    <dimen name="draw_amoun_text_size">60sp</dimen>
+    <dimen name="draw_success_content_min_height">300dp</dimen>
+    <dimen name="draw_fee_height">24dp</dimen>
+    <dimen name="draw_payment_method_elevation">2dp</dimen>
+    <dimen name="draw_payment_desc_margin_top">20dp</dimen>
+    <dimen name="draw_not_available_logo_margin_top">100dp</dimen>
+    <dimen name="draw_not_available_bottom_container_margin_top">60dp</dimen>
+    <!--endregion-->
+
+    <!-- region Employers -->
+    <dimen name="employers_item_min_height">76dp</dimen>
+    <!--endregion-->
+
+    <!-- region Profile Menu Item -->
+    <dimen name="profile_menu_height">70dp</dimen>
+    <!--endregion-->
+
+    <!-- region Open Card Menu Item -->
+    <dimen name="open_card_pager_dot_default">6dp</dimen>
+    <dimen name="open_card_pager_dot_selected">8dp</dimen>
+    <!--endregion-->
+
+    <!-- region Transactions-->
+    <dimen name="transaction_details_amount_size">28sp</dimen>
+    <!--endregion-->
+
+    <!-- region Nearby ATMs-->
+    <dimen name="nearby_atms_enable_location_size">24sp</dimen>
+    <dimen name="nearby_atms_direction_options_title_height">56dp</dimen>
+    <dimen name="nearby_atms_direction_options_option_height">48dp</dimen>
+    <!--endregion-->
+
+    <dimen name="under_keyboard_content_min_height">300dp</dimen>
+    <dimen name="address_city_edit_text_scroll_height">120dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="enchanted_view_pager_margin">40dp</dimen>
+</resources>
