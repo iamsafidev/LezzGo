@@ -1,148 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.home.HomeFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardView_search_home"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="@dimen/ui_spacing_single"
-        android:layout_marginEnd="@dimen/ui_spacing_double"
-        android:background="@color/white"
-        android:elevation="@dimen/ui_spacing_triple"
-        app:cardBackgroundColor="@color/card_search_home"
-        app:cardCornerRadius="25dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@id/guidelinevl5"
-        app:layout_constraintTop_toTopOf="parent"
-        app:strokeColor="@color/primary">
+    <data>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    </data>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editText_home"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/transparent"
-                android:hint="@string/search_all_events"
-                android:imeOptions="actionSearch"
-                android:paddingStart="10dp"
-                android:paddingEnd="45dp"
-                android:singleLine="true"
-                android:textColor="@color/editText_home"
-                android:theme="@style/editText_home_style"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/imageView_search_home"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="10dp"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/ic_search"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/editText_home"
-                app:tint="@color/image_editText_home" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/ic_filter"
-        app:layout_constraintBottom_toBottomOf="@+id/cardView_search_home"
-        app:layout_constraintEnd_toStartOf="@+id/guidelinev95"
-        app:layout_constraintTop_toTopOf="@+id/cardView_search_home"
-        app:tint="@color/primary" />
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/onGoingEventPager"
-        android:layout_width="0dp"
-        android:layout_height="180dp"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineh40"
-        app:layout_constraintEnd_toEndOf="@id/guidelinev95"
-        app:layout_constraintStart_toStartOf="@id/guidelinevl5"
-        app:layout_constraintTop_toBottomOf="@+id/cardView_search_home" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineh40"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4" />
-
-    <TextView
-        android:id="@+id/tvUpcomingEvent"
-        style="@style/TextAppearance.LezzGo.Headline6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/ui_spacing_half"
-        android:text="Upcoming Events"
-        app:layout_constraintStart_toStartOf="@id/guidelinevl5"
-        app:layout_constraintTop_toBottomOf="@id/guidelineh40" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelinevl5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.05" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelinev95"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.95" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineh96"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.96" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineh96"
-        app:layout_constraintEnd_toEndOf="@id/guidelinev95"
-        app:layout_constraintStart_toStartOf="@+id/guidelinevl5"
-        app:layout_constraintTop_toBottomOf="@+id/tvUpcomingEvent" />
-
-    <androidx.drawerlayout.widget.DrawerLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineh96"
-        app:layout_constraintTop_toBottomOf="@id/cardView_search_home">
+        android:layout_height="match_parent"
+        tools:context=".presentation.home.HomeFragment">
 
-        <com.google.android.material.navigation.NavigationView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="end">
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView_search_home"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="@dimen/ui_spacing_single"
+            android:layout_marginEnd="@dimen/ui_spacing_double"
+            android:background="@color/white"
+            android:elevation="@dimen/ui_spacing_triple"
+            app:cardBackgroundColor="@color/card_search_home"
+            app:cardCornerRadius="25dp"
+            app:layout_constraintEnd_toStartOf="@+id/ivFilter"
+            app:layout_constraintStart_toStartOf="@id/guidelinevl5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/primary">
 
-            <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/side_menu"
-                android:name="com.confiz.lezzgo.presentation.filters.FilterFragment"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:layout="@layout/fragment_filter" />
-        </com.google.android.material.navigation.NavigationView>
+                android:layout_height="match_parent">
 
-    </androidx.drawerlayout.widget.DrawerLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/transparent"
+                    android:hint="@string/search_all_events"
+                    android:imeOptions="actionSearch"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="45dp"
+                    android:singleLine="true"
+                    android:textColor="@color/editText_home"
+                    android:theme="@style/editText_home_style"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView_search_home"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_search"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/editText_home"
+                    app:tint="@color/image_editText_home" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
+            android:id="@+id/ivFilter"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_filter"
+            app:layout_constraintBottom_toBottomOf="@+id/cardView_search_home"
+            app:layout_constraintEnd_toStartOf="@+id/guidelinev95"
+            app:layout_constraintTop_toTopOf="@+id/cardView_search_home"
+            app:tint="@color/primary" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/onGoingEventPager"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineh40"
+            app:layout_constraintEnd_toEndOf="@id/guidelinev95"
+            app:layout_constraintStart_toStartOf="@id/guidelinevl5"
+            app:layout_constraintTop_toBottomOf="@+id/cardView_search_home" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineh40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4" />
+
+        <TextView
+            android:id="@+id/tvUpcomingEvent"
+            style="@style/TextAppearance.LezzGo.Headline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/ui_spacing_half"
+            android:text="Upcoming Events"
+            app:layout_constraintStart_toStartOf="@id/guidelinevl5"
+            app:layout_constraintTop_toBottomOf="@id/guidelineh40" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinevl5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinev95"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineh96"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.96" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineh96"
+            app:layout_constraintEnd_toEndOf="@id/guidelinev95"
+            app:layout_constraintStart_toStartOf="@+id/guidelinevl5"
+            app:layout_constraintTop_toBottomOf="@+id/tvUpcomingEvent" />
+
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/drawerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineh96"
+            app:layout_constraintTop_toBottomOf="@id/cardView_search_home">
+
+            <com.google.android.material.navigation.NavigationView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end">
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/side_menu"
+                    android:name="com.confiz.lezzgo.presentation.filters.FilterFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:layout="@layout/fragment_filter" />
+            </com.google.android.material.navigation.NavigationView>
+
+        </androidx.drawerlayout.widget.DrawerLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

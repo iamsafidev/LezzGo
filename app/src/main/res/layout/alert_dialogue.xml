@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/ui_spacing_triple"
+        android:layout_marginRight="@dimen/ui_spacing_triple"
+        android:background="@drawable/cornor_edges_alert"
+        android:paddingTop="@dimen/ui_spacing_double"
+        android:paddingBottom="@dimen/ui_spacing_double">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDialogTitle"
+            style="@style/TextAppearance.LezzGo.Subtitle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/ui_spacing_one_half"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"
+            tools:visibility="visible"
+            tools:text="Are you sure you want to delete this event?" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            style="@style/TextAppearance.LezzGo.Subtitle2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/ui_spacing_quadruple"
+            android:layout_marginTop="@dimen/ui_spacing_single"
+            android:layout_marginEnd="@dimen/ui_spacing_quadruple"
+            android:layout_marginBottom="@dimen/ui_spacing_double_half"
+            android:gravity="center"
+            android:lineSpacingExtra="1sp"
+            android:textColor="@color/black"
+            android:textColorHighlight="@android:color/transparent"
+            android:textColorLink="@color/primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDialogTitle"
+            tools:text="message sdf sdfs sdfsd sdfs \n asadi  asd sadasdassadh hkasdjkasdsahuasdll jaksd aksdk ashdkasudh" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="@dimen/ui_spacing_double"
+            android:background="@color/light_grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view">
+
+            <!--<androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvButtonCancel"
+                style="@style/ASmall"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/ui_spacing_quadruple"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="@dimen/ui_spacing_single"
+                android:textColor="@color/colorPrimaryLight"
+                android:visibility="gone"
+                tools:text="Cancel" />-->
+
+            <View
+                android:id="@+id/btnDivider"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/light_grey"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvButtonTitle"
+                style="@style/TextAppearance.LezzGo.Body1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/ui_spacing_quadruple"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@color/primary"
+                tools:text="OK" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
