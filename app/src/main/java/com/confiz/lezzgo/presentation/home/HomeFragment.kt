@@ -27,8 +27,9 @@ import com.confiz.lezzgo.utils.showFigFolderAlertDialog
 class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
     private val homeViewModel: HomeViewModel by activityViewModels()
+
     private val todayEventAdapter: TodayEventPagerAdapter by lazy {
-        TodayEventPagerAdapter()
+        TodayEventPagerAdapter(eventClickListener)
     }
 
     private val eventClickListener: (String) -> Unit = { eventId ->

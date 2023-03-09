@@ -33,6 +33,9 @@
             app:popUpToInclusive="true"
             app:popUpTo="@layout/fragment_login"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_eventDetailFragment"
+            app:destination="@id/eventDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/closeFriendsFragment"
@@ -41,7 +44,7 @@
         tools:layout="@layout/fragment_close_friend" />
     <fragment
         android:id="@+id/eventDetailFragment"
-        tools:layout="fragment_event_detail"
+        tools:layout="@layout/fragment_event_detail"
         android:name="com.confiz.lezzgo.presentation.eventDetail.EventDetailFragment"
         android:label="EventDetailFragment" >
         <argument

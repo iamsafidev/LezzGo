@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.confiz.lezzgo.R
@@ -22,8 +23,17 @@ class ProfileFragment : Fragment() {
 
     private val homeViewModel: HomeViewModel by activityViewModels()
 
+    private val eventClickListener: (String) -> Unit = { eventId ->
+        if (isAdded)
+            findNavController().navigate(
+                ProfileFragmentDirections.actionProfileFragmentToEventDetailFragment(
+                    eventId
+                )
+            )
+    }
+
     private val attendedEventAdapter: AttendedEventAdapter by lazy {
-        AttendedEventAdapter {}
+        AttendedEventAdapter(eventClickListener)
     }
 
     override fun onCreateView(

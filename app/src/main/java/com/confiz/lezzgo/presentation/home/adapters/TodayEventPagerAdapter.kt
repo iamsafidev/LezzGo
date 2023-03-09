@@ -8,8 +8,9 @@ import com.confiz.lezzgo.databinding.SliderAdapterBinding
 import com.confiz.lezzgo.presentation.base.BaseRecyclerViewAdapter
 import com.confiz.lezzgo.utils.getDate
 
-
-class TodayEventPagerAdapter : BaseRecyclerViewAdapter<Data, SliderAdapterBinding>() {
+class TodayEventPagerAdapter(
+    private val eventClickListener: (eventId: String) -> Unit,
+) : BaseRecyclerViewAdapter<Data, SliderAdapterBinding>() {
     override fun getLayout(): Int {
         return R.layout.slider_adapter
     }
@@ -25,6 +26,9 @@ class TodayEventPagerAdapter : BaseRecyclerViewAdapter<Data, SliderAdapterBindin
                 getDate(items.startDate._seconds, items.startDate._nanoseconds)
         }
         holder.binding.setVariable(BR.eventDetail, items)
+        holder.binding.root.setOnClickListener {
+            eventClickListener(items.id)
+        }
         holder.binding.executePendingBindings()
     }
 }
