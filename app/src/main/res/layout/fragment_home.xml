@@ -19,6 +19,7 @@
             android:layout_height="55dp"
             android:layout_marginTop="@dimen/ui_spacing_single"
             android:layout_marginEnd="@dimen/ui_spacing_double"
+            android:layout_marginBottom="@dimen/ui_spacing_single"
             android:background="@color/white"
             android:elevation="@dimen/ui_spacing_triple"
             app:cardBackgroundColor="@color/card_search_home"
@@ -79,7 +80,21 @@
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/onGoingEventPager"
             android:layout_width="0dp"
-            android:layout_height="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ui_spacing_single"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineh40"
+            app:layout_constraintEnd_toEndOf="@id/guidelinev95"
+            app:layout_constraintStart_toStartOf="@id/guidelinevl5"
+            app:layout_constraintTop_toBottomOf="@+id/cardView_search_home" />
+
+        <TextView
+            android:id="@+id/onGoingEventText"
+            android:layout_width="0dp"
+            android:text="@string/no_event"
+            android:gravity="center"
+            style="@style/TextAppearance.LezzGo.Body1"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ui_spacing_single"
             app:layout_constraintBottom_toTopOf="@+id/guidelineh40"
             app:layout_constraintEnd_toEndOf="@id/guidelinev95"
             app:layout_constraintStart_toStartOf="@id/guidelinevl5"
@@ -90,14 +105,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.4" />
+            app:layout_constraintGuide_percent="0.3" />
 
         <TextView
             android:id="@+id/tvUpcomingEvent"
-            style="@style/TextAppearance.LezzGo.Headline6"
+            style="@style/TextAppearance.LezzGo.Subtitle2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/ui_spacing_half"
+            android:layout_marginTop="@dimen/ui_spacing_single"
             android:text="Upcoming Events"
             app:layout_constraintStart_toStartOf="@id/guidelinevl5"
             app:layout_constraintTop_toBottomOf="@id/guidelineh40" />
@@ -121,9 +137,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.96" />
+            app:layout_constraintGuide_percent="0.99" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/upcomingEventRecycler"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toTopOf="@+id/guidelineh96"
@@ -135,8 +152,11 @@
             android:id="@+id/drawerLayout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@id/guidelineh96"
-            app:layout_constraintTop_toBottomOf="@id/cardView_search_home">
+            app:layout_constraintTop_toBottomOf="@id/cardView_search_home"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="0dp">
 
             <com.google.android.material.navigation.NavigationView
                 android:layout_width="wrap_content"

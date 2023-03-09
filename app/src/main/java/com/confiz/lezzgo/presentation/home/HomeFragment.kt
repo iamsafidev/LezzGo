@@ -12,16 +12,28 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView.VERTICAL
 import com.confiz.lezzgo.R
-import com.confiz.lezzgo.presentation.model.Result
 import com.confiz.lezzgo.data.network.NetworkException
 import com.confiz.lezzgo.databinding.FragmentHomeBinding
 import com.confiz.lezzgo.extensions.debounce
+import com.confiz.lezzgo.presentation.home.adapters.TodayEventPagerAdapter
+import com.confiz.lezzgo.presentation.home.adapters.UpcomingEventAdapter
+import com.confiz.lezzgo.presentation.model.Result
 import com.confiz.lezzgo.utils.showFigFolderAlertDialog
 
 class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
     private val homeViewModel: HomeViewModel by activityViewModels()
+    private val todayEventAdapter: TodayEventPagerAdapter by lazy {
+        TodayEventPagerAdapter()
+    }
+    private val upcomingEventAdapter: UpcomingEventAdapter by lazy {
+        UpcomingEventAdapter()
+    }
+
+    var isSideMenuClosed:Boolean = true
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,6 +53,14 @@ class HomeFragment : Fragment() {
         setupUI()
         setupObserver()
         homeViewModel.getTodayEvent()
+        homeViewModel.getUpcomingEvent()
+    }
+
+    private fun setUpViewPager() {
+        with(binding.onGoingEventPager) {
+            adapter = todayEventAdapter
+            offscreenPageLimit = 1
+        }
     }
 
     private fun setupObserver() {
@@ -59,18 +79,25 @@ class HomeFragment : Fragment() {
                 }
             }
 
-            upcomingEventLiveData.observe(viewLifecycleOwner){
-                when(it){
+            upcomingEventLiveData.observe(viewLifecycleOwner) {
+                when (it) {
                     is Result.Loading -> Unit
-                    is Result.Success-> Unit
+                    is Result.Success -> upcomingEventAdapter.items = it.data?.data!!
                     is Result.Error -> requireContext().showFigFolderAlertDialog(message = it.exception.message)
                 }
             }
 
-            todayEventLiveData.observe(viewLifecycleOwner){
-                when(it){
+            todayEventLiveData.observe(viewLifecycleOwner) {
+                when (it) {
                     is Result.Loading -> Unit
-                    is Result.Success-> Unit
+                    is Result.Success -> {
+                        if (it.data?.data?.size == 0)
+                            binding.onGoingEventText.visibility = View.VISIBLE
+                        else {
+                            binding.onGoingEventText.visibility = View.GONE
+                            todayEventAdapter.items = it.data?.data!!
+                        }
+                    }
                     is Result.Error -> requireContext().showFigFolderAlertDialog(message = it.exception.message)
                 }
             }
@@ -78,12 +105,27 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupUI() {
+        setUpViewPager()
         with(binding) {
+            upcomingEventRecycler.apply {
+                layoutManager = LinearLayoutManager(requireContext(), VERTICAL, false)
+                adapter = upcomingEventAdapter
+            }
             ivFilter.setOnClickListener {
-                if (!drawerLayout.isDrawerOpen(GravityCompat.END))
+                    isSideMenuClosed = !isSideMenuClosed
+                if(isSideMenuClosed){
+                    drawerLayout.openDrawer(GravityCompat.END)
+                    drawerLayout.visibility=View.VISIBLE
+                }
+                else{
+                    drawerLayout.closeDrawer(GravityCompat.END)
+                    drawerLayout.visibility=View.GONE
+                }
+
+                /*if (!drawerLayout.isDrawerOpen(GravityCompat.END))
                     drawerLayout.openDrawer(GravityCompat.END)
                 else
-                    drawerLayout.closeDrawer(GravityCompat.END)
+                    drawerLayout.closeDrawer(GravityCompat.END)*/
             }
 
             editTextHome.addTextChangedListener(object : TextWatcher {

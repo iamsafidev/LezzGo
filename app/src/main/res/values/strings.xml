@@ -12,4 +12,6 @@
     </string>
     <string name="search_all_events">Search All events</string>
     <string name="connect_issue">Connectivity Issue</string>
+    <string name="no_event">There is no event today.</string>
+    <string name="read_more">Read More</string>
 </resources>

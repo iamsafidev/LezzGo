@@ -42,8 +42,8 @@ data class Location(
 
 @JsonClass(generateAdapter = true)
 data class StartDate(
-    val _nanoseconds: Int,
-    val _seconds: Int
+    val _nanoseconds: Long,
+    val _seconds: Long
 )
 
 @JsonClass(generateAdapter = true)

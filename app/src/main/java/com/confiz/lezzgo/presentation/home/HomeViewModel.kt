@@ -1,9 +1,14 @@
 package com.confiz.lezzgo.presentation.home
 
+import android.graphics.drawable.Drawable
 import android.util.Log
+import androidx.appcompat.widget.AppCompatImageView
+import androidx.databinding.BindingAdapter
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.bumptech.glide.Glide
+import com.confiz.lezzgo.R
 import com.confiz.lezzgo.data.api.model.Filter
 import com.confiz.lezzgo.data.api.model.SearchFilterRequest
 import com.confiz.lezzgo.data.api.model.SearchFilterResponse
@@ -83,3 +88,4 @@ enum class EventType(val value: String) {
     UPCOMING("upcoming"),
     PAST("recent")
 }
+
