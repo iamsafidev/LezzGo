@@ -18,7 +18,11 @@
         android:id="@+id/pastEventsFragment"
         android:name="com.confiz.lezzgo.presentation.pastevent.PastEventsFragment"
         android:label="fragment_past_events"
-        tools:layout="@layout/fragment_past_events" />
+        tools:layout="@layout/fragment_past_events" >
+        <action
+            android:id="@+id/action_pastEventsFragment_to_eventDetailFragment"
+            app:destination="@id/eventDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.confiz.lezzgo.presentation.profile.ProfileFragment"

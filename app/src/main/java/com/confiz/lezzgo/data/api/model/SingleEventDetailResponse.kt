@@ -10,7 +10,7 @@ data class SingleEventDetailResponse(
 ) {
     @JsonClass(generateAdapter = true)
     data class Data(
-        val attendees: List<String>,
+        val attendees: List<String> = emptyList(),
         val details: String,
         val endDate: EndDate,
         @Json(name = "for")
@@ -28,10 +28,11 @@ data class SingleEventDetailResponse(
             val _nanoseconds: Long,
             val _seconds: Long
         )
+
         @JsonClass(generateAdapter = true)
         data class Location(
             val address: String,
-            val city: String,
+            val city: String = "",
             val lat: Double,
             val long: Double
         )
@@ -42,6 +43,7 @@ data class SingleEventDetailResponse(
             val _seconds: Long
         )
     }
+
     @JsonClass(generateAdapter = true)
     data class Status(
         val code: Int,

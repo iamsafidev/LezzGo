@@ -7,10 +7,12 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.confiz.lezzgo.R
 import com.confiz.lezzgo.databinding.FragmentPastEventsBinding
+import com.confiz.lezzgo.presentation.home.HomeFragmentDirections
 import com.confiz.lezzgo.presentation.home.HomeViewModel
 import com.confiz.lezzgo.presentation.model.Result
 import com.confiz.lezzgo.presentation.pastevent.adapter.PastEventAdapter
@@ -22,17 +24,20 @@ class PastEventsFragment : Fragment() {
 
     private val homeViewModel: HomeViewModel by activityViewModels()
 
-    private val pastEventAdapter: PastEventAdapter by lazy {
-        PastEventAdapter {
+    private val eventClickListener: (String) -> Unit = { eventId ->
+        if (isAdded)
+            findNavController()
+                .navigate(PastEventsFragmentDirections.actionPastEventsFragmentToEventDetailFragment(eventId))
+    }
 
-        }
+    private val pastEventAdapter: PastEventAdapter by lazy {
+        PastEventAdapter(eventClickListener)
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate<FragmentPastEventsBinding>(
             inflater,
             R.layout.fragment_past_events,
