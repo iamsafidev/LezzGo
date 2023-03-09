@@ -23,7 +23,13 @@
         android:id="@+id/profileFragment"
         android:name="com.confiz.lezzgo.presentation.profile.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_loginFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@layout/fragment_login"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/closeFriendsFragment"
         android:name="com.confiz.lezzgo.presentation.closefriends.CloseFriendFragment"
@@ -38,4 +44,9 @@
             android:name="eventId"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        tools:layout="@layout/fragment_login"
+        android:name="com.confiz.lezzgo.presentation.login.LoginFragment"
+        android:label="LoginFragment" />
 </navigation>

@@ -75,6 +75,13 @@ fun getDate(seconds: Long, nanoseconds: Long): String? {
 }
 
 @RequiresApi(Build.VERSION_CODES.N)
+fun getDateWithOutHours(seconds: Long, nanoseconds: Long): String? {
+    val date = Date(seconds * 1000 + nanoseconds / 1000000)
+    return SimpleDateFormat("MMMM dd, yyyy", Locale.getDefault()).format(date)
+
+}
+
+@RequiresApi(Build.VERSION_CODES.N)
 fun getDay(seconds: Long, nanoseconds: Long): String {
     val date = Date(seconds * 1000 + nanoseconds / 1000000)
     return SimpleDateFormat("EEEE", Locale.getDefault()).format(date).take(3)

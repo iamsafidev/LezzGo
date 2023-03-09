@@ -1,14 +1,9 @@
 package com.confiz.lezzgo.presentation.home
 
-import android.graphics.drawable.Drawable
 import android.util.Log
-import androidx.appcompat.widget.AppCompatImageView
-import androidx.databinding.BindingAdapter
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.bumptech.glide.Glide
-import com.confiz.lezzgo.R
 import com.confiz.lezzgo.data.api.model.Filter
 import com.confiz.lezzgo.data.api.model.PastEventResponse
 import com.confiz.lezzgo.data.api.model.SearchFilterRequest
@@ -47,10 +42,14 @@ class HomeViewModel @Inject constructor(
         MutableLiveData()
     val todayEventLiveData: LiveData<Result<SearchFilterResponse>> = _todayEventLiveData
 
-    
+
     private val _pastEventLiveData: MutableLiveData<Result<PastEventResponse>> =
         MutableLiveData()
     val pastEventLiveData: LiveData<Result<PastEventResponse>> = _pastEventLiveData
+
+    private val _logoutLiveData: MutableLiveData<Boolean> =
+        MutableLiveData()
+    val logoutLiveData: LiveData<Boolean> = _logoutLiveData
 
     fun getPastEvents() {
         getPastEvents.invoke(
@@ -60,8 +59,13 @@ class HomeViewModel @Inject constructor(
                 _pastEventLiveData.postValue(Result.Success(searchFilterResponse))
             })
     }
+
     fun closeNavigationDrawer() {
         _navigationDrawerStateLiveData.postValue(true)
+    }
+
+    fun logoutUser() {
+        _logoutLiveData.postValue(true)
     }
 
     private val onError: (Exception) -> Unit = { exception ->
@@ -98,6 +102,10 @@ class HomeViewModel @Inject constructor(
             Log.i("check", "success: $it")
         }
 
+    }
+
+    fun clearLogoutSession() {
+        _logoutLiveData.postValue(false)
     }
 }
 

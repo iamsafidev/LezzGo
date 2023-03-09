@@ -83,8 +83,6 @@
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginStart="@dimen/ui_spacing_half"
-            android:layout_marginEnd="@dimen/ui_spacing_half"
             app:defaultNavHost="true"
             app:layout_constraintBottom_toTopOf="@id/dashboard_bottom_nav"
             app:layout_constraintTop_toBottomOf="@id/container_welcome"

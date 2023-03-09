@@ -14,6 +14,7 @@
     <color name="component_disabled_dark">#C32553</color>
     <color name="white">#FFFFFFFF</color>
     <color name="text_content_disabled_brand">#F5979E</color>
+    <color name="light_background">#EFBABE</color>
     <color name="text_primary_color">#111111</color>
     <color name="light_grey">#D8D7D7</color>
     <color name="grey">#969696</color>
