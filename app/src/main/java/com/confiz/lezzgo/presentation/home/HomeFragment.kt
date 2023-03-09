@@ -39,7 +39,7 @@ class HomeFragment : Fragment() {
                 )
             )
     }
-    
+
     private val upcomingEventAdapter: UpcomingEventAdapter by lazy {
         UpcomingEventAdapter(eventClickListener)
     }
@@ -93,7 +93,11 @@ class HomeFragment : Fragment() {
             upcomingEventLiveData.observe(viewLifecycleOwner) {
                 when (it) {
                     is Result.Loading -> Unit
-                    is Result.Success -> upcomingEventAdapter.items = it.data?.data!!
+                    is Result.Success -> {
+                        binding.tvUpcomingEvent.text =
+                            getString(R.string.upcoming_event, it.data?.data?.size)
+                        upcomingEventAdapter.items = it.data?.data!!
+                    }
                     is Result.Error -> requireContext().showFigFolderAlertDialog(message = it.exception.message)
                 }
             }

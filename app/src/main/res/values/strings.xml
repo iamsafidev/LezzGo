@@ -13,6 +13,7 @@
     <string name="search_all_events">Search All events</string>
     <string name="connect_issue">Connectivity Issue</string>
     <string name="no_event">There is no event today.</string>
+    <string name="upcoming_event">Upcoming Event (%d)</string>
     <string name="read_more">Read More</string>
     <string name="long_text">소중한 차를 파는 사람들의 고민을 해결합니다.
         \n자동차는 대부분의 사람들에게 1, 2호 재산이자,
