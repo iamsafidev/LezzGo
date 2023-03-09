@@ -33,7 +33,6 @@ class FilterFragment : Fragment() {
         setupUI()
     }
 
-    val TAG = "check"
     private fun setupUI() {
         with(binding) {
             btnApplyFilters.setOnClickListener {
@@ -54,10 +53,15 @@ class FilterFragment : Fragment() {
             }
 
             checkboxLhr.setOnCheckedChangeListener { _, isChecked ->
-                if (isChecked)
-                    homeViewModel.locationFilterList.add(
-                        checkboxLhr.text.toString().trim().lowercase()
+                if (isChecked){
+                    if (!homeViewModel.locationFilterList.contains(
+                            checkboxLhr.text.toString().trim().lowercase()
+                        )
                     )
+                        homeViewModel.locationFilterList.add(
+                            checkboxLhr.text.toString().trim().lowercase()
+                        )
+                }
                 else
                     homeViewModel.locationFilterList.remove(
                         checkboxLhr.text.toString().trim().lowercase()
@@ -65,22 +69,31 @@ class FilterFragment : Fragment() {
             }
 
             checkboxUs.setOnCheckedChangeListener { _, isChecked ->
-                if (isChecked)
-                    homeViewModel.locationFilterList.add(
-                        checkboxUs.text.toString().trim().lowercase()
+                if (isChecked) {
+                    if (!homeViewModel.locationFilterList.contains(
+                            checkboxUs.text.toString().trim().lowercase()
+                        )
                     )
-                else
+                        homeViewModel.locationFilterList.add(
+                            checkboxUs.text.toString().trim().lowercase()
+                        )
+                } else
                     homeViewModel.locationFilterList.remove(
                         checkboxUs.text.toString().trim().lowercase()
                     )
             }
 
             checkboxIsl.setOnCheckedChangeListener { _, isChecked ->
-                if (isChecked)
-                    homeViewModel.locationFilterList.add(
-                        checkboxIsl.text.toString().trim().lowercase()
-                    )
-                else
+                if (isChecked) {
+                    if (!homeViewModel.locationFilterList.contains(
+                            checkboxIsl.text.toString().trim().lowercase()
+                        )
+                    ) {
+                        homeViewModel.locationFilterList.add(
+                            checkboxIsl.text.toString().trim().lowercase()
+                        )
+                    }
+                } else
                     homeViewModel.locationFilterList.remove(
                         checkboxIsl.text.toString().trim().lowercase()
                     )

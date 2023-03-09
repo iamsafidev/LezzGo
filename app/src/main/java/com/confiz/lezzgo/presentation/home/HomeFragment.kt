@@ -81,6 +81,11 @@ class HomeFragment : Fragment() {
                 binding.drawerLayout.closeDrawer(GravityCompat.END)
             }
 
+            searchEventLiveData.observe(viewLifecycleOwner) { response ->
+                if (isAdded && response.data.isNotEmpty())
+                    findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToSearchEventsFragment())
+            }
+
             onErrorLiveData.observe(viewLifecycleOwner) { exception ->
                 when (exception) {
                     is NetworkException -> requireContext().showFigFolderAlertDialog(

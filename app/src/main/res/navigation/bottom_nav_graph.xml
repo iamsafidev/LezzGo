@@ -13,6 +13,10 @@
         <action
             android:id="@+id/action_homeFragment_to_eventDetailFragment"
             app:destination="@id/eventDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchEventsFragment"
+            app:launchSingleTop="true"
+            app:destination="@id/searchEventsFragment" />
     </fragment>
     <fragment
         android:id="@+id/pastEventsFragment"
@@ -56,4 +60,13 @@
         tools:layout="@layout/fragment_login"
         android:name="com.confiz.lezzgo.presentation.login.LoginFragment"
         android:label="LoginFragment" />
+    <fragment
+        android:id="@+id/searchEventsFragment"
+        android:name="com.confiz.lezzgo.presentation.search.SearchEventsFragment"
+        android:label="fragment_search_events"
+        tools:layout="@layout/fragment_search_events" >
+        <action
+            android:id="@+id/action_searchEventsFragment_to_eventDetailFragment"
+            app:destination="@id/eventDetailFragment" />
+    </fragment>
 </navigation>

@@ -1,6 +1,5 @@
 package com.confiz.lezzgo.presentation.home
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -52,8 +51,12 @@ class HomeViewModel @Inject constructor(
     private val _logoutLiveData: MutableLiveData<Boolean> = MutableLiveData()
     val logoutLiveData: LiveData<Boolean> = _logoutLiveData
 
-    private val _eventDetailLiveData: MutableLiveData<Result<SingleEventDetailResponse>> = MutableLiveData()
+    private val _eventDetailLiveData: MutableLiveData<Result<SingleEventDetailResponse>> =
+        MutableLiveData()
     val eventDetailLiveData: LiveData<Result<SingleEventDetailResponse>> = _eventDetailLiveData
+
+    private val _searchEventLiveData: MutableLiveData<SearchFilterResponse> = MutableLiveData()
+    val searchEventLiveData: LiveData<SearchFilterResponse> = _searchEventLiveData
 
     fun getEventDetails(eventId: String) {
         getEventDetails.invoke(
@@ -112,13 +115,17 @@ class HomeViewModel @Inject constructor(
                 eventType.value
             ), onError
         ) {
-            Log.i("check", "success: $it")
+            _searchEventLiveData.postValue(it)
         }
 
     }
 
     fun clearLogoutSession() {
         _logoutLiveData.postValue(false)
+    }
+
+    fun clearSearchFilterResults() {
+        _searchEventLiveData.value = SearchFilterResponse()
     }
 }
 

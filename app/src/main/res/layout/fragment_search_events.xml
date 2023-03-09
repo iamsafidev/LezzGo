@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.pastevent.PastEventsFragment">
+
+
+        <TextView
+            android:id="@+id/tvSearchEvent"
+            style="@style/TextAppearance.LezzGo.Subtitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/ui_spacing_half"
+            android:layout_marginTop="@dimen/ui_spacing_double"
+            android:layout_marginBottom="@dimen/ui_spacing_double"
+            android:text="Filter Events"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/guidelinevl5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinevl5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinev95"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineh96"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.99" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/filterEventRecycler"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/ui_spacing_double"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineh96"
+            app:layout_constraintEnd_toEndOf="@id/guidelinev95"
+            app:layout_constraintStart_toStartOf="@+id/guidelinevl5"
+            app:layout_constraintTop_toBottomOf="@+id/tvSearchEvent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

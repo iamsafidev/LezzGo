@@ -18,7 +18,6 @@ import com.confiz.lezzgo.presentation.model.Result
 import com.confiz.lezzgo.presentation.pastevent.adapter.PastEventAdapter
 import com.confiz.lezzgo.utils.showFigFolderAlertDialog
 
-
 class PastEventsFragment : Fragment() {
     lateinit var binding: FragmentPastEventsBinding
 
