@@ -10,9 +10,11 @@ import androidx.lifecycle.ViewModel
 import com.bumptech.glide.Glide
 import com.confiz.lezzgo.R
 import com.confiz.lezzgo.data.api.model.Filter
+import com.confiz.lezzgo.data.api.model.PastEventResponse
 import com.confiz.lezzgo.data.api.model.SearchFilterRequest
 import com.confiz.lezzgo.data.api.model.SearchFilterResponse
 import com.confiz.lezzgo.domain.events.GetFilterEvents
+import com.confiz.lezzgo.domain.events.GetPastEvents
 import com.confiz.lezzgo.domain.events.GetTodayEvents
 import com.confiz.lezzgo.domain.events.GetUpcomingEvent
 import com.confiz.lezzgo.presentation.model.Result
@@ -23,7 +25,8 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     private val getFilterEvents: GetFilterEvents,
     private val getUpcomingEvent: GetUpcomingEvent,
-    private val getTodayEvents: GetTodayEvents
+    private val getTodayEvents: GetTodayEvents,
+    private val getPastEvents: GetPastEvents
 ) : ViewModel() {
 
     var locationFilterList: ArrayList<String> = ArrayList()
@@ -43,6 +46,20 @@ class HomeViewModel @Inject constructor(
     private val _todayEventLiveData: MutableLiveData<Result<SearchFilterResponse>> =
         MutableLiveData()
     val todayEventLiveData: LiveData<Result<SearchFilterResponse>> = _todayEventLiveData
+
+    
+    private val _pastEventLiveData: MutableLiveData<Result<PastEventResponse>> =
+        MutableLiveData()
+    val pastEventLiveData: LiveData<Result<PastEventResponse>> = _pastEventLiveData
+
+    fun getPastEvents() {
+        getPastEvents.invoke(
+            Unit,
+            onException = { exception -> _pastEventLiveData.postValue(Result.Error(exception)) },
+            onResult = { searchFilterResponse ->
+                _pastEventLiveData.postValue(Result.Success(searchFilterResponse))
+            })
+    }
     fun closeNavigationDrawer() {
         _navigationDrawerStateLiveData.postValue(true)
     }

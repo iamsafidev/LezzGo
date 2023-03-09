@@ -3,6 +3,7 @@ package com.confiz.lezzgo.data.api
 import com.confiz.lezzgo.data.api.model.PastEventResponse
 import com.confiz.lezzgo.data.api.model.SearchFilterRequest
 import com.confiz.lezzgo.data.api.model.SearchFilterResponse
+import com.confiz.lezzgo.data.api.model.SingleEventDetailResponse
 import retrofit2.Call
 import javax.inject.Inject
 
@@ -23,5 +24,9 @@ class EventService @Inject constructor(
 
     override fun getPastEvent(): Call<PastEventResponse> {
         return eventApi.getPastEvent()
+    }
+
+    override fun getEventDetails(eventId: String): Call<SingleEventDetailResponse> {
+        return eventApi.getEventDetails(eventId)
     }
 }

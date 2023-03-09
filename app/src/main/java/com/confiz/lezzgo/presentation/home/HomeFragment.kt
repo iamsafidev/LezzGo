@@ -12,6 +12,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.VERTICAL
 import com.confiz.lezzgo.R
@@ -29,11 +30,21 @@ class HomeFragment : Fragment() {
     private val todayEventAdapter: TodayEventPagerAdapter by lazy {
         TodayEventPagerAdapter()
     }
+
+    private val eventClickListener: (String) -> Unit = { eventId ->
+        if (isAdded)
+            findNavController().navigate(
+                HomeFragmentDirections.actionHomeFragmentToEventDetailFragment(
+                    eventId
+                )
+            )
+    }
+    
     private val upcomingEventAdapter: UpcomingEventAdapter by lazy {
-        UpcomingEventAdapter()
+        UpcomingEventAdapter(eventClickListener)
     }
 
-    var isSideMenuClosed:Boolean = true
+    var isSideMenuClosed: Boolean = true
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -112,14 +123,13 @@ class HomeFragment : Fragment() {
                 adapter = upcomingEventAdapter
             }
             ivFilter.setOnClickListener {
-                    isSideMenuClosed = !isSideMenuClosed
-                if(isSideMenuClosed){
+                isSideMenuClosed = !isSideMenuClosed
+                if (isSideMenuClosed) {
                     drawerLayout.openDrawer(GravityCompat.END)
-                    drawerLayout.visibility=View.VISIBLE
-                }
-                else{
+                    drawerLayout.visibility = View.VISIBLE
+                } else {
                     drawerLayout.closeDrawer(GravityCompat.END)
-                    drawerLayout.visibility=View.GONE
+                    drawerLayout.visibility = View.GONE
                 }
 
                 /*if (!drawerLayout.isDrawerOpen(GravityCompat.END))

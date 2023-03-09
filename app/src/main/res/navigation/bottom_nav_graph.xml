@@ -9,7 +9,11 @@
         android:id="@+id/homeFragment"
         android:name="com.confiz.lezzgo.presentation.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_eventDetailFragment"
+            app:destination="@id/eventDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/pastEventsFragment"
         android:name="com.confiz.lezzgo.presentation.pastevent.PastEventsFragment"
@@ -25,4 +29,13 @@
         android:name="com.confiz.lezzgo.presentation.closefriends.CloseFriendFragment"
         android:label="fragment_close_friend"
         tools:layout="@layout/fragment_close_friend" />
+    <fragment
+        android:id="@+id/eventDetailFragment"
+        tools:layout="fragment_event_detail"
+        android:name="com.confiz.lezzgo.presentation.eventDetail.EventDetailFragment"
+        android:label="EventDetailFragment" >
+        <argument
+            android:name="eventId"
+            app:argType="string" />
+    </fragment>
 </navigation>

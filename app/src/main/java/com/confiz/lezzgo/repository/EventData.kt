@@ -6,6 +6,7 @@ import com.confiz.lezzgo.data.api.EventApi
 import com.confiz.lezzgo.data.api.model.PastEventResponse
 import com.confiz.lezzgo.data.api.model.SearchFilterRequest
 import com.confiz.lezzgo.data.api.model.SearchFilterResponse
+import com.confiz.lezzgo.data.api.model.SingleEventDetailResponse
 import com.confiz.lezzgo.data.network.NetworkException
 import com.confiz.lezzgo.data.network.NetworkHandler
 import com.confiz.lezzgo.data.wrapper.either
@@ -44,6 +45,14 @@ class EventData @Inject constructor(
             networkHandler.isConnected,
             ifFalse = { NetworkException.Default },
             ifTrue = { service.getPastEvent().either() }
+        ).flatten()
+    }
+
+    override fun getEventDetail(eventId:String): Either<Exception, SingleEventDetailResponse> {
+        return Either.conditionally(
+            networkHandler.isConnected,
+            ifFalse = { NetworkException.Default },
+            ifTrue = { service.getEventDetails(eventId).either() }
         ).flatten()
     }
 }

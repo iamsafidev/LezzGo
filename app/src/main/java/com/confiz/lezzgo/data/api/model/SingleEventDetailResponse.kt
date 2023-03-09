@@ -4,63 +4,44 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class PastEventResponse(
-    val data: List<Data>,
+data class SingleEventDetailResponse(
+    val data: Data,
     val status: Status
 ) {
     @JsonClass(generateAdapter = true)
     data class Data(
-        val attendees: List<String> = emptyList(),
+        val attendees: List<String>,
         val details: String,
         val endDate: EndDate,
         @Json(name = "for")
         val cityList: List<String>,
-        val gallery: Gallery? = null,
-        val highlight: String = "",
+        val happened: Boolean,
         val id: String,
         val location: Location,
         val organizers: String,
-        val register: String = "",
-        val social: Social? = null,
         val startDate: StartDate,
         val thumbnail: String,
         val title: String
     ) {
         @JsonClass(generateAdapter = true)
         data class EndDate(
-            val _nanoseconds: Long,
-            val _seconds: Long
+            val _nanoseconds: Int,
+            val _seconds: Int
         )
-
-        @JsonClass(generateAdapter = true)
-        data class Gallery(
-            val media: List<String>,
-            val more: String
-        )
-
         @JsonClass(generateAdapter = true)
         data class Location(
             val address: String,
-            val city: String="",
+            val city: String,
             val lat: Double,
             val long: Double
         )
 
         @JsonClass(generateAdapter = true)
-        data class Social(
-            val facebook: String = "",
-            val instagram: String = "",
-            val linkedin: String = "",
-            val youtube: String = ""
-        )
-
-        @JsonClass(generateAdapter = true)
         data class StartDate(
-            val _nanoseconds: Long,
-            val _seconds: Long
+            val _nanoseconds: Int,
+            val _seconds: Int
         )
     }
-
     @JsonClass(generateAdapter = true)
     data class Status(
         val code: Int,

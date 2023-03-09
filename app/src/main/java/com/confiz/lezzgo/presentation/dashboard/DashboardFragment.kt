@@ -9,7 +9,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupWithNavController
 import com.confiz.lezzgo.R
 import com.confiz.lezzgo.databinding.FragmentDashboardBinding
 
@@ -27,6 +26,10 @@ class DashboardFragment : Fragment() {
         return binding.root
     }
 
+    fun hideProfileView() {
+        binding.containerWelcome.visibility = View.GONE
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (savedInstanceState == null) {
@@ -35,7 +38,10 @@ class DashboardFragment : Fragment() {
     }
 
     private fun setupBottomNavigationBar() {
-        binding.profileName.text= HtmlCompat.fromHtml(getString(R.string.some_text,"Sumita Zahra"), HtmlCompat.FROM_HTML_MODE_LEGACY)
+        binding.profileName.text = HtmlCompat.fromHtml(
+            getString(R.string.some_text, "Sumita Zahra"),
+            HtmlCompat.FROM_HTML_MODE_LEGACY
+        )
         val navHostFragment =
             childFragmentManager.findFragmentById(R.id.dashboard_fragment_container) as NavHostFragment
         val navController = navHostFragment.navController
