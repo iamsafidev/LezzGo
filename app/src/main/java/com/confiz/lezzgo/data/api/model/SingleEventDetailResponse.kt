@@ -25,8 +25,8 @@ data class SingleEventDetailResponse(
     ) {
         @JsonClass(generateAdapter = true)
         data class EndDate(
-            val _nanoseconds: Int,
-            val _seconds: Int
+            val _nanoseconds: Long,
+            val _seconds: Long
         )
         @JsonClass(generateAdapter = true)
         data class Location(
@@ -38,8 +38,8 @@ data class SingleEventDetailResponse(
 
         @JsonClass(generateAdapter = true)
         data class StartDate(
-            val _nanoseconds: Int,
-            val _seconds: Int
+            val _nanoseconds: Long,
+            val _seconds: Long
         )
     }
     @JsonClass(generateAdapter = true)

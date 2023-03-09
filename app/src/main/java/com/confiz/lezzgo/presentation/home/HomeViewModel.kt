@@ -8,6 +8,8 @@ import com.confiz.lezzgo.data.api.model.Filter
 import com.confiz.lezzgo.data.api.model.PastEventResponse
 import com.confiz.lezzgo.data.api.model.SearchFilterRequest
 import com.confiz.lezzgo.data.api.model.SearchFilterResponse
+import com.confiz.lezzgo.data.api.model.SingleEventDetailResponse
+import com.confiz.lezzgo.domain.events.GetEventDetails
 import com.confiz.lezzgo.domain.events.GetFilterEvents
 import com.confiz.lezzgo.domain.events.GetPastEvents
 import com.confiz.lezzgo.domain.events.GetTodayEvents
@@ -21,7 +23,8 @@ class HomeViewModel @Inject constructor(
     private val getFilterEvents: GetFilterEvents,
     private val getUpcomingEvent: GetUpcomingEvent,
     private val getTodayEvents: GetTodayEvents,
-    private val getPastEvents: GetPastEvents
+    private val getPastEvents: GetPastEvents,
+    private val getEventDetails: GetEventDetails
 ) : ViewModel() {
 
     var locationFilterList: ArrayList<String> = ArrayList()
@@ -42,14 +45,24 @@ class HomeViewModel @Inject constructor(
         MutableLiveData()
     val todayEventLiveData: LiveData<Result<SearchFilterResponse>> = _todayEventLiveData
 
-
     private val _pastEventLiveData: MutableLiveData<Result<PastEventResponse>> =
         MutableLiveData()
     val pastEventLiveData: LiveData<Result<PastEventResponse>> = _pastEventLiveData
 
-    private val _logoutLiveData: MutableLiveData<Boolean> =
-        MutableLiveData()
+    private val _logoutLiveData: MutableLiveData<Boolean> = MutableLiveData()
     val logoutLiveData: LiveData<Boolean> = _logoutLiveData
+
+    private val _eventDetailLiveData: MutableLiveData<Result<SingleEventDetailResponse>> = MutableLiveData()
+    val eventDetailLiveData: LiveData<Result<SingleEventDetailResponse>> = _eventDetailLiveData
+
+    fun getEventDetails(eventId: String) {
+        getEventDetails.invoke(
+            eventId,
+            onException = { exception -> _eventDetailLiveData.postValue(Result.Error(exception)) },
+            onResult = { singleEventDetailResponse ->
+                _eventDetailLiveData.postValue(Result.Success(singleEventDetailResponse))
+            })
+    }
 
     fun getPastEvents() {
         getPastEvents.invoke(
