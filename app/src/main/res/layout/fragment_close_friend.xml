@@ -1,21 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.closefriends.CloseFriendFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <com.confiz.lezzgo.presentation.views.ReadMoreTextView
-        android:id="@+id/readMoreTextView"
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:foreground="?attr/selectableItemBackground"
-        android:text="@string/long_text"
-        app:readMoreColor="@color/primary"
-        app:readMoreMaxLine="2"
-         />
+        android:layout_height="match_parent"
+        tools:context=".presentation.pastevent.PastEventsFragment">
 
-</FrameLayout>
+
+        <TextView
+            android:id="@+id/tvCloseFriends"
+            style="@style/TextAppearance.LezzGo.Subtitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/ui_spacing_half"
+            android:layout_marginTop="@dimen/ui_spacing_double"
+            android:layout_marginBottom="@dimen/ui_spacing_double"
+            android:text="Close Friends"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/guidelinevl5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinevl5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinev95"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineh96"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.99" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/friendsRecycler"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/ui_spacing_double"
+            tools:listitem="@layout/close_friends_adapter"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineh96"
+            app:layout_constraintEnd_toEndOf="@id/guidelinev95"
+            app:layout_constraintStart_toStartOf="@+id/guidelinevl5"
+            app:layout_constraintTop_toBottomOf="@+id/tvCloseFriends" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

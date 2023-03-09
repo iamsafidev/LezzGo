@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="friends"
+            type="com.confiz.lezzgo.data.api.model.CloseFriendsResponse" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardView_event_adapter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_welcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/ui_spacing_single"
+            android:paddingTop="@dimen/ui_spacing_single"
+            android:paddingEnd="@dimen/ui_spacing_single"
+            android:paddingBottom="@dimen/ui_spacing_single"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.confiz.lezzgo.presentation.views.CircularImageView
+                android:id="@+id/iv_user_image"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="@dimen/ui_spacing_single"
+                android:src="@drawable/profile_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imgNotification"
+                android:layout_width="35dp"
+                android:layout_height="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_remove" />
+
+            <TextView
+                android:id="@+id/profileName"
+                style="@style/TextAppearance.LezzGo.Body2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/ui_spacing_single"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="@{friends.name}"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/imgNotification"
+                app:layout_constraintStart_toEndOf="@+id/iv_user_image"
+                app:layout_constraintTop_toTopOf="@+id/iv_user_image"
+                tools:text="Hi, XYZ" />
+
+            <TextView
+                android:id="@+id/textView3"
+                style="@style/TextAppearance.LezzGo.Body2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/ui_spacing_single"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@{friends.designation}"
+                android:textColor="@color/grey"
+                app:layout_constraintEnd_toStartOf="@+id/imgNotification"
+                app:layout_constraintStart_toEndOf="@+id/iv_user_image"
+                app:layout_constraintTop_toBottomOf="@+id/profileName"
+                tools:text="Software Engineer" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
